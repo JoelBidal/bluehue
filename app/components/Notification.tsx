@@ -49,7 +49,7 @@ export const Notification = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.3 } }}
             >
-              <div className="flex items-center gap-[10px] bg-mainBlue pt-[12px] pb-[15px] px-[15px] rounded-[20px] w-[320px] border border-[#ffffff25]">
+              <div className="flex items-center gap-[10px] bg-mainBlue pt-[12px] pb-[15px] px-[15px] rounded-[20px] w-[320px] 2xl:w-[350px] border border-[#ffffff25]">
                 <div>
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="40" height="40" rx="10" fill="#F4EFFD"/>
@@ -82,3 +82,5 @@ export const Notification = () => {
     </div>
   );
 };
+
+export default Notification
