@@ -8,7 +8,7 @@ export function HeroNotificationArea() {
         <div className="z-10">
           <Notification />
         </div>
-        <Image src="/hero-image-2.jpg" alt="Hero Image" fill style={{ objectFit: "cover", objectPosition: "center top" }} />
+        <Image src="/hero-image.jpg" alt="Hero Image" fill style={{ objectFit: "cover", objectPosition: "center top" }} />
         <PixelTrail pixelSize={10} delay={400} fadeDuration={0.5} pixelClassName="bg-white" />
       </div> 
     );

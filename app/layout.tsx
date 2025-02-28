@@ -20,6 +20,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bluehue — A Creative Research Lab Exploring New Ideas from New York",
   description: "A Creative Research Lab Exploring New Ideas from New York",
+  openGraph: {
+    images: [
+      {
+        url: '/og.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://joelbidal.com.ar/bluehue',
+    siteName: 'Bluehue',
+    title: 'Bluehue — A Creative Research Lab Exploring New Ideas from New York',
+    description: 'A Creative Research Lab Exploring New Ideas from New York',
+  },
+  robots:{
+    index: false,
+    follow: false
+  }
 };
 
 export default function RootLayout({
