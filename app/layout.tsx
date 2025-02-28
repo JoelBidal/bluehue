@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: '/og.jpg',
+        url: 'https://comforting-palmier-7d8f71.netlify.app/og.jpg',
         width: 1200,
         height: 630,
       },
