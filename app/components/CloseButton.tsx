@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 
 interface PathProps {
     d: string;
-    [key: string]: any;
-}
+    [key: string]: string | number | boolean;
+}  
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Path: React.FC<PathProps> = (props) => (
     <motion.path
         fill="transparent"

@@ -36,9 +36,9 @@ const PixelTrail: React.FC<PixelTrailProps> = ({
 
       const pixelElement = document.getElementById(`${trailId.current}-pixel-${x}-${y}`)
       if (pixelElement) {
-        const animatePixel = (pixelElement as any).__animatePixel
+        const animatePixel = (pixelElement as HTMLElement & { __animatePixel?: () => void }).__animatePixel
         if (animatePixel) animatePixel()
-      }
+      }      
     },
     [pixelSize],
   )
@@ -88,18 +88,20 @@ const PixelDot: React.FC<PixelDotProps> = React.memo(({ id, size, fadeDuration, 
       opacity: [1, 0],
       transition: { duration: fadeDuration / 1000, delay: delay / 1000 },
     })
-  }, [])
+  }, [controls, fadeDuration, delay])
+  
 
   // Attach the animatePixel function to the DOM element
-  const ref = useCallback(
-    (node: HTMLDivElement | null) => {
-      if (node) {
-        ;(node as any).__animatePixel = animatePixel
-      }
-    },
-    [animatePixel],
-  )
-
+  interface AnimatedDivElement extends HTMLDivElement {
+    __animatePixel?: () => void
+  }
+  
+  const ref = useCallback((node: AnimatedDivElement | null) => {
+    if (node) {
+      node.__animatePixel = animatePixel
+    }
+  }, [animatePixel])
+  
   return (
     <motion.div
       id={id}
