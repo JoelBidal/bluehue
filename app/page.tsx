@@ -1,101 +1,64 @@
+"use client";
+import * as React from "react";
+import { Notification } from "./components/Notification";
+
 import Image from "next/image";
+import Link from "next/link";
+
+import PixelTrail from "./components/PixelTrail";
+import Navigation from "./components/Navigation";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="max-w-[calc(100%-100px)] m-auto">
+      <Navigation />
+      <main className="min-h-[calc(100vh-90px)] flex items-stretch justify-center gap-[10px] pb-[10px]">
+        <div className="grow max-w-[50%] rounded-sm flex flex-col justify-between py-[40px]">
+          <h1 className="text-mainBlue text-5xl font-medium tracking-tighter leading-[120%]">
+            <span className="text-secondaryBlue">Discover Bluehue:</span> A Creative Research Lab Exploring New Ideas from New York
+            <span
+              className="inner-image inline-flex items-center justify-center relative overflow-hidden w-[94px] h-[50px] rounded-sm transition-width duration-300 ease-in-out"
+            >
+              <svg width="50" height="33" viewBox="0 0 50 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path className="path-left" d="M31.9444 16.4996C31.9444 25.3208 24.7934 32.4718 15.9722 32.4718C7.15101 32.4718 0 25.3208 0 16.4996C0 7.67835 7.15101 0.527344 15.9722 0.527344C24.7934 0.527344 31.9444 7.67835 31.9444 16.4996Z" fill="#CDAFFF"/>
+                <path className="path-right" d="M50 16.4996C50 25.3208 42.849 32.4718 34.0278 32.4718C25.2066 32.4718 18.0556 25.3208 18.0556 16.4996C18.0556 7.67835 25.2066 0.527344 34.0278 0.527344C42.849 0.527344 50 7.67835 50 16.4996Z" fill="#30017A"/>
+              </svg>
+            </span>
+          </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="text-mainBlue text-sm tracking-tight leading-[140%] font-medium">
+            <div className="max-w-[450px] mb-[40px]">
+              <p className="mb-2">
+                Bluehue is an experimental research practice dedicated to exploring new ways of thinking and creating.
+              </p>
+              <p>
+                <strong>Join us today and connect with like-minded individuals</strong> who are redefining the limits of
+                knowledge and creativity.
+              </p>
+            </div>
+            <div className="flex items-center gap-[10px]">
+              <Link href="https://joelbidal.com.ar/" target="_blank" className="button secondary">
+                Request Access
+              </Link>
+              <Link href="https://joelbidal.com.ar/" target="_blank" className="button tertiary">
+                Learn More about Bluehue
+              </Link> 
+            </div>
+          </div>
         </div>
+
+        <div className="grow max-w-[10%]"></div>
+
+        <div className="relative grow max-w-[40%] max-h-[calc(100vh-100px)] bg-mainBlue rounded-sm overflow-hidden flex items-end justify-center py-[70px]">
+          <div className="z-10">
+            <Notification />
+          </div>
+          
+          <Image src="/hero-image-2.jpg" alt="Hero Image" fill style={{ objectFit: "cover", objectPosition: "center top" }} />
+
+          <PixelTrail pixelSize={10} delay={400} fadeDuration={0.5} pixelClassName="bg-white" />
+        </div> 
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
