@@ -10,7 +10,7 @@ export default function Home() {
       <Navigation />
       <main className="min-h-[calc(100vh-90px)] flex flex-wrap items-stretch justify-center gap-[10px] pb-[10px] 2xl:flex-nowrap">
         <HeroContent />
-        <div className="grow max-w-[100%] hidden md:block md:max-w-[10%]"></div>
+        <div className="grow max-w-[100%] hidden md:block md:max-w-[10%] 2xl:max-w-[5%]"></div>
         <HeroNotificationArea />
       </main>
     </div>
