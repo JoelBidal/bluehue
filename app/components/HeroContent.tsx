@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export function HeroContent() {
     return (
-        <div className="grow max-w-[100%] md:max-w-[50%] 2xl:max-w-[30%] rounded-sm flex flex-col gap-10 justify-between py-[40px]">
+        <div className="grow max-w-[100%] md:max-w-[50%] rounded-sm flex flex-col gap-10 justify-between py-[40px]">
             <h1 className="text-mainBlue text-3xl md:text-5xl font-medium -tracking-[.07em] leading-[120%]">
             <span className="text-secondaryBlue">Discover Bluehue:</span> A Creative Research Lab Exploring New Ideas from New York
             <span
